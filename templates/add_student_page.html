@@ -7,6 +7,10 @@
 
     <h1>Add Student</h1>
 
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    
     <form method="post">
 
         <input type="text" name="student_first_name"></input>
@@ -16,6 +20,5 @@
         <input type="submit" value="Add Student"></input>
 
     </form>
-
 </body>
 </html>
