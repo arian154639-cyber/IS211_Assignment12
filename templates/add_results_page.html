@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Result</title>
+</head>
+<body>
+
+    <h1>Add Result</h1>
+
+    <form method="post">
+
+        Student:
+
+        <select name="student_id">
+            {% for student in students %}
+            <option value="{{ student['student_id'] }}">
+                {{ student['student_first_name'] }} {{ student['student_last_name'] }}
+            </option>
+            {% endfor %}
+        </select>
+
+        Quiz:
+
+        <select name="quiz_id">
+            {% for quiz in quizzes %}
+            <option value="{{ quiz['quiz_id'] }}">
+                {{ quiz['quiz_subject'] }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="quiz_score">
+
+        <input type="submit" value="Add Result">
+
+    </form>
+
+</body>
+</html>

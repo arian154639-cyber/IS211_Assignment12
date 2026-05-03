@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Results</title>
+    <style>
+        table, tr, td { 
+            border-style: solid; 
+            border-width: 1px; 
+            border-left-width: 1px; 
+            border-right-width: 1px; 
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Results for {{ student['student_first_name'] }} {{ student['student_last_name'] }}</h1>
+
+    <table>
+        <tr>
+            <td>Quiz ID</td>
+            <td>Score</td>
+        </tr>
+
+        {% for row in results %}
+        <tr>
+            <td>{{ row['quiz_id'] }}</td>
+            <td>{{ row['quiz_score'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+    <p><a href="/dashboard">Back</a></p>
+
+</body>
+</html>
