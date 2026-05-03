@@ -14,9 +14,9 @@
 </head>
 <body>
 
-    <p><a href="/student/add">Add Student</a></p>
-    <p><a href="/quiz/add">Add Quiz</a></p>
-    <p><a href="/results/add">Add Result</a></p>
+    <p><a href = "/student/add">Add Student</a></p>
+    <p><a href = "/quiz/add">Add Quiz</a></p>
+    <p><a href = "/results/add">Add Result</a></p>
 
     <h1>Students</h1>
     <table>
@@ -32,7 +32,7 @@
             <td>{{ row['student_id'] }}</td>
             <td>{{ row['student_first_name'] }}</td>
             <td>{{ row['student_last_name'] }}</td>
-            <td><a href="/student/{{ row['student_id'] }}">View Results</a></td>
+            <td><a href = "/student/{{ row['student_id'] }}">View Results</a></td>
         </tr>
         {% endfor %}
     </table>

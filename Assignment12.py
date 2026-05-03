@@ -15,19 +15,19 @@ app = Flask(__name__)
 app.secret_key = "secret_key" 
 
 def get_db():
-    conn = sqlite3.connect("database.db")
+    conn = sqlite3.connect("hw12.db")
     conn.row_factory = sqlite3.Row
     return conn
 
 @app.route("/")
-def home():
+def main_controller():
     return redirect("/login")
 
 def valid_login(username, password):
     return username == "admin" and password == "password"
 
 @app.route("/login", methods = ["GET", "POST"])
-def login():
+def login_controller():
     error = None
     if request.method == "POST":
         username = request.form["username"]
@@ -42,7 +42,7 @@ def login():
     return render_template("login_form.html", error = error)
 
 @app.route("/dashboard")
-def dashboard():
+def dashboard_controller():
     if "username" not in session:
         return redirect("/login")
 
@@ -56,7 +56,7 @@ def dashboard():
     return render_template("dashboard_page.html", students = students, quizzes = quizzes)
 
 @app.route("/student/add", methods = ["GET", "POST"])
-def add_student():
+def add_student_controller():
     if "username" not in session:
         return redirect("/login")
 
@@ -82,7 +82,7 @@ def add_student():
     return render_template("add_student_page.html")
 
 @app.route("/quiz/add", methods = ["GET", "POST"])
-def add_quiz():
+def add_quiz_controller():
     if "username" not in session:
         return redirect("/login")
 
@@ -109,7 +109,7 @@ def add_quiz():
     return render_template("add_quiz_page.html")
 
 @app.route("/student/<id>")
-def view_results(id):
+def view_results_controller(id):
     if "username" not in session:
         return redirect("/login")
 
@@ -129,7 +129,7 @@ def view_results(id):
     return render_template("student_results_page.html", results = results, student = student, message = message)
 
 @app.route("/results/add", methods = ["GET", "POST"])
-def add_results():
+def add_results_controller():
     if "username" not in session:
         return redirect("/login")
 

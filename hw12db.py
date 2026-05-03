@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("database.db")
+conn = sqlite3.connect("hw12.db")
 cursor = conn.cursor()
 
 with open("schema.sql", "r") as schema_file:
