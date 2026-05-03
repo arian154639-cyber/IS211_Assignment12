@@ -28,6 +28,7 @@ def valid_login(username, password):
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+    error = None
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
