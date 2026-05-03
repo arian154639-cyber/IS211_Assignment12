@@ -53,11 +53,7 @@ def dashboard():
 
     conn.close()
 
-    return render_template(
-        "dashboard_page.html",
-        students = students,
-        quizzes = quizzes
-    )
+    return render_template("dashboard_page.html", students = students, quizzes = quizzes)
 
 @app.route("/student/add", methods = ["GET", "POST"])
 def add_student():
@@ -81,10 +77,7 @@ def add_student():
             return redirect("/dashboard")
 
         except Exception:
-            return render_template(
-                "add_student_page.html",
-                error = "Error. Please try again."
-            )
+            return render_template("add_student_page.html", error = "Error. Please try again.")
 
     return render_template("add_student_page.html")
 
@@ -111,10 +104,7 @@ def add_quiz():
             return redirect("/dashboard")
 
         except Exception:
-            return render_template(
-                "add_quiz_page.html",
-                error = "Error. Please try again."
-            )
+            return render_template("add_quiz_page.html", error = "Error. Please try again.")
 
     return render_template("add_quiz_page.html")
 
@@ -136,12 +126,7 @@ def view_results(id):
     else:
         message = None
 
-    return render_template(
-        "student_results_page.html",
-        results = results,
-        student = student,
-        message = message
-    )
+    return render_template("student_results_page.html", results = results, student = student, message = message)
 
 @app.route("/results/add", methods = ["GET", "POST"])
 def add_results():
@@ -171,19 +156,10 @@ def add_results():
 
         conn.close()
 
-        return render_template(
-            "add_results_page.html",
-            students = students,
-            quizzes = quizzes
-        )
+        return render_template("add_results_page.html", students = students, quizzes = quizzes)
 
     except Exception:
-        return render_template(
-            "add_results_page.html",
-            students = [],
-            quizzes = [],
-            error = "Error. Please try again."
-        )
+        return render_template("add_results_page.html", students = [], quizzes = [], error = "Error. Please try again.")
 
 if __name__ == "__main__":
     app.run()
