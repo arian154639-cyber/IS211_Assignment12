@@ -3,7 +3,8 @@ I aimed to keep the code readable for this assignment, using last week"s assignm
 I implemented sessions into the script as per the instructions, but I chose not to use "g". I used 
 try/except for error handling. I would have done some more polishing such as adding "placeholder" 
 to the html forms if there had been more time. I also used double quotes for everything in this script
-to increase consistency, and I did not use my triple quote style from hw12db.py here for brevity.
+to increase consistency, and I did not use my triple quote style from hw12db.py here for brevity. There's
+also a few errors that I'm aware of that i would have liked to fix if there had been more time.
 """
 
 from flask import Flask, render_template, redirect, session, request
