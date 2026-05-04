@@ -13,8 +13,6 @@
 
     <form method = "post">
 
-        Student:
-
         <select name = "student_id">
             {% for student in students %}
             <option value = "{{ student['student_id'] }}">
@@ -22,8 +20,6 @@
             </option>
             {% endfor %}
         </select>
-
-        Quiz:
 
         <select name = "quiz_id">
             {% for quiz in quizzes %}
