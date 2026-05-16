@@ -125,10 +125,10 @@ def view_results_controller(student_id):
     
     results = db.execute('SELECT * FROM results WHERE student_id = ?', (student_id,)).fetchall()
 
-    if not results:
-        message = 'No results.'
-    else:
+    if results:
         message = None
+    else:
+        message = 'No results.'
 
     return render_template('student_results_page.html', student=student, results=results, message=message)
 
@@ -142,7 +142,7 @@ def add_results_controller():
         quiz_id = request.form['quiz_id']
         quiz_score = request.form['quiz_score']
 
-        if not student_id or not quiz_id or not quiz_score:
+        if not quiz_score:
             error = 'Required field is empty.'
         else:
             db.execute(
