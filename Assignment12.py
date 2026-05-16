@@ -117,7 +117,7 @@ def add_quiz_controller():
 
     return render_template('add_quiz_page.html')
 
-@app.route('/student/<int:student_id>')
+@app.route('/student/<student_id>')
 def view_results_controller(student_id):
     db = get_db()
 
