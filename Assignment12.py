@@ -1,7 +1,7 @@
 """
 Note to Professor: I refactored the code after reconsidering the offer to resubmit. As per the
 instructions, the username is admin and the password is password. You need to run hw12db.py first
-to create the database.
+to create the database. I sent two emails about assignments 10 and 12.
 
 I aimed to keep the code readable for this assignment, using two of the tutorials from the readings.
 I only implemented sessions into the dashboard because all other features are only accessed from there.
