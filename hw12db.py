@@ -1,7 +1,7 @@
 import sqlite3
 
-conn = sqlite3.connect("hw12.db")
-cursor = conn.cursor()
+connection = sqlite3.connect("hw12.db")
+cursor = connection.cursor()
 
 with open("schema.sql", "r") as schema_file:
     cursor.executescript(schema_file.read())
@@ -13,13 +13,13 @@ with open("schema.sql", "r") as schema_file:
 
     cursor.execute("""
     INSERT INTO quizzes (quiz_id, quiz_subject, quiz_question_count, quiz_date)
-    VALUES ("1", "Python Basics", "5", "February, 5th, 2015")
+    VALUES (1, "Python Basics", 5, "February, 5th, 2015")
     """);
 
     cursor.execute("""
     INSERT INTO results (student_id, quiz_id, quiz_score)
-    VALUES ("1", "1", "85")
+    VALUES (1, 1, 85)
     """);
 
-conn.commit()
-conn.close()
+connection.commit()
+connection.close()

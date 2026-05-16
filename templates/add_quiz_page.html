@@ -11,13 +11,12 @@
         <p>{{ error }}</p>
     {% endif %}
     
-    <form method = "post">
+    <form action="/quiz/add" method="post">
+        <input type="text" name="quiz_subject" placeholder="subject"></input>
+        <input type="text" name="quiz_question_count" placeholder="question count"></input>
+        <input type="text" name="quiz_date" placeholder="date"></input>
 
-        <input type = "text" name = "quiz_subject"></input>
-        <input type = "text" name = "quiz_question_count"></input>
-        <input type = "text" name = "quiz_date"></input>
-        <input type = "submit" value = "Add Quiz"></input>
-
+        <input type="submit" value="Add Quiz"></input>
     </form>
 </body>
 </html>

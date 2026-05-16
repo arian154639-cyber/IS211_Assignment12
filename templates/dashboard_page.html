@@ -14,9 +14,9 @@
 </head>
 <body>
 
-    <p><a href = "/student/add">Add Student</a></p>
-    <p><a href = "/quiz/add">Add Quiz</a></p>
-    <p><a href = "/results/add">Add Result</a></p>
+    <p><a href="/student/add">Add Student</a></p>
+    <p><a href="/quiz/add">Add Quiz</a></p>
+    <p><a href="/results/add">Add Result</a></p>
 
     <h1>Students</h1>
     <table>
@@ -27,12 +27,12 @@
             <td>Results</td>
         </tr>
 
-        {% for row in students %}
+        {% for student in students %}
         <tr>
-            <td>{{ row['student_id'] }}</td>
-            <td>{{ row['student_first_name'] }}</td>
-            <td>{{ row['student_last_name'] }}</td>
-            <td><a href = "/student/{{ row['student_id'] }}">View Results</a></td>
+            <td>{{ student["student_id"] }}</td>
+            <td>{{ student["student_first_name"] }}</td>
+            <td>{{ student["student_last_name"] }}</td>
+            <td><a href="/student/{{ student['student_id'] }}">View Results</a></td>
         </tr>
         {% endfor %}
     </table>
@@ -46,12 +46,12 @@
             <td>Date</td>
         </tr>
 
-        {% for row in quizzes %}
+        {% for quiz in quizzes %}
         <tr>
-            <td>{{ row['quiz_id'] }}</td>
-            <td>{{ row['quiz_subject'] }}</td>
-            <td>{{ row['quiz_question_count'] }}</td>
-            <td>{{ row['quiz_date'] }}</td>
+            <td>{{ quiz["quiz_id"] }}</td>
+            <td>{{ quiz["quiz_subject"] }}</td>
+            <td>{{ quiz["quiz_question_count"] }}</td>
+            <td>{{ quiz["quiz_date"] }}</td>
         </tr>
         {% endfor %}
     </table>
