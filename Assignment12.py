@@ -159,5 +159,5 @@ def add_results_controller():
 
     return render_template('add_results_page.html', students=students, quizzes=quizzes, error=error)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
